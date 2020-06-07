@@ -115,3 +115,6 @@ NOw this is Really Depend upon us but if we do this then configuration for webpa
       server.js
 
 ```
+* mkdir dist src 
+* cd src 
+* mkdir components 
