@@ -18,3 +18,10 @@ $ npm init
 ```
 $ npm i express
 ```
+
+* React and ReactDOM
+  * React for Creating UI and ReactDOM to render that UI to the DOM
+  
+```
+$ npm i react react-dom
+```
