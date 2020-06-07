@@ -180,3 +180,82 @@ scripts: {
 }
 ```
 
+##  7. Testing Everything with a Sample React Application
+
+Here is a sample server-side ready React application that we can test with it .
+
+__src/components/App.js__
+```javascript
+import React, { useState } from 'react';
+
+export default function App() {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      This is a sample stateful and server-side
+      rendered React application.
+      <br />
+      <br />
+      Here is a button that will track
+      how many times you click it:
+      <br />
+      <br />
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+    </div>
+  );
+}
+```
+
+__src/index.js__
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import App from './components/App';
+
+ReactDOM.hydrate(
+  <App />,
+  document.getElementById('mountNode'),
+);
+
+```
+
+__src/server/server.js__
+```javascript
+import express from 'express';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import App from '../components/App';
+
+const server = express();
+server.use(express.static('dist'));
+
+server.get('/', (req, res) => {
+  const initialMarkup = ReactDOMServer.renderToString(<App />);
+
+  res.send(`
+    <html>
+      <head>
+        <title>Sample React App</title>
+      </head>
+      <body>
+        <div id="mountNode">${initialMarkup}</div>
+        <script src="/main.js"></script>
+      </body>
+    </html>
+  `)
+});
+
+server.listen(4242, () => console.log('Server is running...'));
+```
+
+
+
+That’s it.now run both npm dev-server and dev-bundle scripts (in 2 separate terminals):
+
+```
+$ npm run dev-server
+$ npm run dev-bundle
+```
+
+Then open up your browser on http://localhost:4242/,  it will run react app 

@@ -4,6 +4,7 @@
   "description": "## 1. Initializine",
   "main": "index.js",
   "scripts": {
+    "start": "run-p dev-server dev-bundle",
     "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/",
     "dev-bundle": "webpack -w -d"
   },
