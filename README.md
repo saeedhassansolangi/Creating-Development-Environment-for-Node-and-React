@@ -41,3 +41,12 @@ $ npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-rea
 ```
 
 > These Dependencies are Production Dependencies OR Main Dependencies that means when we install things on a production server then we are going to get all these Dependencies with it.
+
+## 3. Installing Development Dependencies
+
+* Install Nodemon 
+  * Nodeomon is a Package that will automatically restart node when we change something in node OR it is a Watcher top of the Node Command and it will automatically restart that node command when we save changes to files.
+
+```
+$ npm i -D nodemon
+```
