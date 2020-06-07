@@ -118,3 +118,40 @@ NOw this is Really Depend upon us but if we do this then configuration for webpa
 * mkdir dist src 
 * cd src 
 * mkdir components 
+
+
+## 5. Configuring Webpack and Babel
+
+### Configure Babel
+
+ * To configure Babel to compile JSX and modern JavaScript code, create a __babel.config.js__ file under the root of the project and put the following module.exports object in it:
+
+__babel.config.js__
+```javascript
+module.exports = {
+  presets: ['@babel/preset-env', '@babel/preset-react'],
+};
+```
+
+
+### Configure Webpack
+
+ * To configure Webpack to bundle your application into a single bundle file, create a __webpack.config.js__  file under the root of the project and put the following module.exports object in it:
+  
+__webpack.config.js__
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+    ],
+  },
+};
+```
+
