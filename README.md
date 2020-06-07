@@ -136,7 +136,7 @@ module.exports = {
 
 ### Configure Webpack
 
- * To configure Webpack to bundle your application into a single bundle file, create a __webpack.config.js__  file under the root of the project and put the following module.exports object in it:
+ * To configure Webpack to bundle our application into a single bundle file, create a __webpack.config.js__  file under the root of the project and put the following module.exports object in it:
   
 __webpack.config.js__
 ```javascript
