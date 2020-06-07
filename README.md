@@ -50,3 +50,10 @@ $ npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-rea
 ```
 $ npm i -D nodemon
 ```
+
+* Install Eslint 
+  * It will Analyze Our Code and tell us that we have a problem Or Our Code is Lacking in Certain Qualities.
+
+```
+$ npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
+```
