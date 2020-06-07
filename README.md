@@ -30,7 +30,14 @@ $ npm i react react-dom
   * Webpack is a Modular Bundler . This will bundle all our Javascript files/others into a single file 
 
 ```
- npm i webpack webpack-cli
+ $ npm i webpack webpack-cli
 ```
 
+* Install Babel 
+  * Babel is the Package/tool that compiles JSX into a Regular API Call that means babel compiles JSX into React.createElement() API behind the Scene because browsers dont understand JSX Syntax .
 
+```
+$ npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
+```
+
+> These Dependencies are Production Dependencies OR Main Dependencies that means when we install things on a production server then we are going to get all these Dependencies with it.
