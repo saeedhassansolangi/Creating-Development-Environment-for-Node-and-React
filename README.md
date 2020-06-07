@@ -57,3 +57,44 @@ $ npm i -D nodemon
 ```
 $ npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
 ```
+
+and Now We need to configure Eslint . We need to add a __.eslintrc.js__ file in the root of the project and paste below object in it .
+
+__eslintrc.js__
+```javascript
+module.exports = {
+  parser: 'babel-eslint',
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true,
+    jest: true,
+  },
+  parserOptions: {
+    ecmaVersion: 2020,
+    ecmaFeatures: {
+      impliedStrict: true,
+      jsx: true,
+    },
+    sourceType: 'module',
+  },
+  plugins: ['react', 'react-hooks'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+  ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  rules: {
+    // You can do your customizations here...
+    // For example, if you don't want to use the prop-types package,
+    // you can turn off that recommended rule with: 'react/prop-types': ['off']
+  },
+};
+
+```
