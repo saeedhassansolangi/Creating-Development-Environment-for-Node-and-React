@@ -4,7 +4,8 @@
   "description": "## 1. Initializine",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/",
+    "dev-bundle": "webpack -w -d"
   },
   "author": "",
   "license": "ISC",

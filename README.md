@@ -155,3 +155,28 @@ module.exports = {
 };
 ```
 
+## 6. Creating npm Scripts for Development
+
+* we need 2 commands to run this environment. we need to run our web server and need to run Webpack to bundle the frontend application for browsers.
+  
+Now , goto the package.json and put below two lines under the scripts
+
+```json
+  "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/"
+```
+
+The other script that you need is a simple runner for Webpack:
+
+```json
+"dev-bundle": "webpack -w -d"
+```
+
+Here’s the whole scripts section in package.json after adding these 2 new scripts
+
+```json
+scripts: {
+  "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/",
+  "dev-bundle": "webpack -w -d"
+}
+```
+
