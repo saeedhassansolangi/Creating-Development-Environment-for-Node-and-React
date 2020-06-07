@@ -98,3 +98,20 @@ module.exports = {
 };
 
 ```
+
+## 4. Creating an Initial Directory Structure
+
+NOw this is Really Depend upon us but if we do this then configuration for webpack is goint to be a little bit easier  
+
+```text
+/
+  dist/
+    main.js
+  src/
+    index.js
+    components/
+      App.js
+    server/
+      server.js
+
+```
