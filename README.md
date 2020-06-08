@@ -253,7 +253,7 @@ $ npm run dev-bundle
 
 ## Optional 
  
-* If we want to run both __npm run dev-server__ and __npm run-dev-bundle__ with a Single Command , we need to install this package [npm-run-all](https://www.npmjs.com/package/npm-run-all) , it will run both the scripts with one command .Now we dont need to run both scripts in two different terminal .
+* If we want to run both __npm run dev-server__ and __npm run-dev-bundle__ with a Single Command , we need to install this package [npm-run-all](https://www.npmjs.com/package/npm-run-all) , it will run both the scripts with one command then we dont need to run both scripts in two different terminal .
 
 ```
 npm i npm-run-all
