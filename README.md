@@ -277,3 +277,11 @@ NOw whole scripts section in package.json file after adding start script
     "dev-bundle": "webpack -w -d"
   },
 ```
+
+Now Run like below command instead of dev-server and dev-bundle
+
+```
+npm start 
+```
+
+## Then open up  browser on http://localhost:4242/ and we will see our react app on port 4242. 
