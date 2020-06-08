@@ -4,7 +4,7 @@
 
 First create a package.json file. 
 
-You can create this file using the __npm init__ command:
+We can create this file using the __npm init__ command or using __npm init -y__  .
 
 ```
 $ npm init
@@ -42,6 +42,9 @@ $ npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-rea
 
 > These Dependencies are Production Dependencies OR Main Dependencies that means when we install things on a production server then we are going to get all these Dependencies with it.
 
+
+
+
 ## 3. Installing Development Dependencies
 
 * Install Nodemon 
@@ -58,7 +61,7 @@ $ npm i -D nodemon
 $ npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks
 ```
 
-and Now We need to configure Eslint . We need to add a __.eslintrc.js__ file in the root of the project and paste below object in it .
+and Now We need to configure Eslint , add a __.eslintrc.js__ file in the root of the project and paste below object in it .
 
 __eslintrc.js__
 ```javascript
@@ -96,8 +99,11 @@ module.exports = {
     // you can turn off that recommended rule with: 'react/prop-types': ['off']
   },
 };
-
 ```
+
+> These are the dev Dependencies that means if we install things on production server we cannot get these devDependencies by default.
+
+
 
 ## 4. Creating an Initial Directory Structure
 
@@ -115,9 +121,10 @@ NOw this is Really Depend upon us but if we do this then configuration for webpa
       server.js
 
 ```
+
 * mkdir dist src 
 * cd src 
-* mkdir components 
+* mkdir components server
 
 
 ## 5. Configuring Webpack and Babel
@@ -157,7 +164,7 @@ module.exports = {
 
 ## 6. Creating npm Scripts for Development
 
-* we need 2 commands to run this environment. we need to run our web server and need to run Webpack to bundle the frontend application for browsers.
+* We need __2__ Commands to run this environment. We need to run our web server and need to run Webpack to bundle the frontend application for browsers.
   
 Now , goto the package.json and put below two lines under the scripts
 
@@ -165,7 +172,7 @@ Now , goto the package.json and put below two lines under the scripts
   "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/"
 ```
 
-The other script that you need is a simple runner for Webpack:
+The other script that we need is a simple runner for Webpack:
 
 ```json
 "dev-bundle": "webpack -w -d"
@@ -208,7 +215,7 @@ import App from './components/App';
 
 ReactDOM.hydrate(
   <App />,
-  document.getElementById('mountNode'),
+  document.getElementById('root'),
 );
 
 ```
@@ -232,7 +239,7 @@ server.get('/', (req, res) => {
         <title>Sample React App</title>
       </head>
       <body>
-        <div id="mountNode">${initialMarkup}</div>
+        <div id="root">${initialMarkup}</div>
         <script src="/main.js"></script>
       </body>
     </html>
@@ -242,14 +249,14 @@ server.get('/', (req, res) => {
 server.listen(4242, () => console.log('Server is running...'));
 ```
 
-That’s it.now run both npm dev-server and dev-bundle scripts (in 2 separate terminals):
+That’s it. Now run both npm __dev-server__ and __dev-bundle scripts__ scripts (in 2 separate terminals):
 
 ```
 $ npm run dev-server
 $ npm run dev-bundle
 ```
 
-#### Then open up  browser on http://localhost:4242/ and it will run react app on that port. 
+### Then open up browser on http://localhost:4242/ and it will run react app on port 4242. 
 
 ## Optional 
  
