@@ -1,6 +1,6 @@
 #  Development Environment for Node and React (Full Stack)
 
-## 1. Initializine
+## 1. Initializing
 
 First create a package.json file. 
 
