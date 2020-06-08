@@ -1,4 +1,4 @@
-# Creating Development Environment for Node and React (Full Stack)
+#  Development Environment for Node and React (Full Stack)
 
 ## 1. Initializine
 
