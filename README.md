@@ -285,7 +285,7 @@ NOw whole scripts section in package.json file after adding start script
   },
 ```
 
-Now Run like below command instead of dev-server and dev-bundle
+Now Run below command instead of dev-server and dev-bundle
 
 ```
 npm start 
