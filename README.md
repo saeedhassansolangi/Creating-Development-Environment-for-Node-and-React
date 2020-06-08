@@ -192,14 +192,7 @@ export default function App() {
   const [count, setCount] = useState(0);
   return (
     <div>
-      This is a sample stateful and server-side
-      rendered React application.
-      <br />
-      <br />
-      Here is a button that will track
-      how many times you click it:
-      <br />
-      <br />
+       <p>Increament</p>
       <button onClick={() => setCount(count + 1)}>{count}</button>
     </div>
   );
@@ -249,8 +242,6 @@ server.get('/', (req, res) => {
 server.listen(4242, () => console.log('Server is running...'));
 ```
 
-
-
 That’s it.now run both npm dev-server and dev-bundle scripts (in 2 separate terminals):
 
 ```
@@ -258,4 +249,31 @@ $ npm run dev-server
 $ npm run dev-bundle
 ```
 
-Then open up your browser on http://localhost:4242/,  it will run react app 
+#### Then open up  browser on http://localhost:4242/ and it will run react app on that port. 
+
+## Optional 
+ 
+* If we want to run both __npm run dev-server__ and __npm run-dev-bundle__ with a Single Command , we need to install this package [npm-run-all](https://www.npmjs.com/package/npm-run-all) , it will run both the scripts with one command .Now we dont need to run both scripts in two different terminal .
+
+```
+npm i npm-run-all
+```
+Now goto the package.json file and add a __start__ script like below
+
+```json
+"scripts": {
+    "start": "run-p dev-server dev-bundle",
+}
+```
+
+run-p is for parallel 
+
+NOw whole scripts section in package.json file after adding start script
+
+```json
+ "scripts": {
+    "start": "run-p dev-server dev-bundle",
+    "dev-server": "nodemon --exec babel-node src/server/server.js --ignore dist/",
+    "dev-bundle": "webpack -w -d"
+  },
+```
